@@ -1,0 +1,72 @@
+{
+	"name": "MasterPL",
+	"properties": {
+		"activities": [
+			{
+				"name": "RunCopyRenameFiles",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CopyRenameFiles",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "RunCVSAll2SQL",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "RunCopyRenameFiles",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "CSVAll2SQL",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "RunArchiveProcessedFiles",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "RunCVSAll2SQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "ArchiveProcessedFiles",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-02-18T17:07:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,70 @@
+{
+	"name": "pipeline0732",
+	"properties": {
+		"description": "L﻿oad data to 3NF schema",
+		"activities": [
+			{
+				"name": "online_purchase_2_tOnlineService",
+				"type": "Script",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "SinkSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": "insert into [dbo].[tOnlineService] (ServiceCode, ServiceName)\nselect distinct t.online_service_code, t.online_service_name\nfrom stg.online_purchase t\nwhere t.online_service_code not in \n(select ServiceCode from tOnlineService)"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			},
+			{
+				"name": "online_purchase_2_tOnlinePurchase",
+				"type": "Script",
+				"dependsOn": [
+					{
+						"activity": "online_purchase_2_tOnlineService",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"linkedServiceName": {
+					"referenceName": "SinkSqlDatabase1",
+					"type": "LinkedServiceReference"
+				},
+				"typeProperties": {
+					"scripts": [
+						{
+							"type": "Query",
+							"text": "insert into tOnlinePurchase (MovieId, Price, ServiceId, SrcFileName, TransactionDate, TransactionId, UserId)\nselect\n(select m.MovieId from tMovies m where m.MovieIdNK = t.movie_id) MovieId, \nt.price Price, \n(select os.ServiceId from [tOnlineService] os where os.ServiceCode = t.online_service_code) ServiceId, \nt.source_filename SrcFileName, \nt.transaction_date TransactionDate, \nt.transaction_id TransactionId, \nt.user_id UserId\nfrom stg.online_purchase t\n\n"
+						}
+					],
+					"scriptBlockExecutionTimeout": "02:00:00"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-03-19T14:50:15Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
