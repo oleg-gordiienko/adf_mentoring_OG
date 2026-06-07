@@ -2,7 +2,7 @@
 	"name": "AzureSqlCredits",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "SQLStoringPWDInGit",
+			"referenceName": "SinkSqlDatabase1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -28,7 +28,11 @@
 				"name": "source_filename",
 				"type": "nvarchar"
 			}
-		]
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "extract_log"
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
