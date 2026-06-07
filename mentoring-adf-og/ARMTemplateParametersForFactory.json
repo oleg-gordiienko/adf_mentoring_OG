@@ -1,0 +1,147 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "mentoring-adf-og"
+		},
+		"ADLSGen2_accountKey": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageAU_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorageJson_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabaseLinkedService_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase_DataMart_password": {
+			"value": ""
+		},
+		"AzureStorageLinkedService_connectionString": {
+			"value": ""
+		},
+		"DataLakeRawMoviesArchiveDestinationService_accountKey": {
+			"value": ""
+		},
+		"DataLakeRawMoviesSourceStorage_accountKey": {
+			"value": ""
+		},
+		"LocalSQLserver_password": {
+			"value": ""
+		},
+		"LogCopyMovies_accountKey": {
+			"value": ""
+		},
+		"ReadBlobJSON_connectionString": {
+			"value": ""
+		},
+		"ReadBlobOnline_connectionString": {
+			"value": ""
+		},
+		"SinkSqlDatabase1_password": {
+			"value": ""
+		},
+		"WriteJSON2DataLake_accountKey": {
+			"value": ""
+		},
+		"WriteLakeJSON_accountKey": {
+			"value": ""
+		},
+		"ADLSGen2_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"AzureKeyVaultLinkedServiceOG_properties_typeProperties_baseUrl": {
+			"value": "https://mentoring-key-vault-og1.vault.azure.net/"
+		},
+		"AzureSqlDatabaseLinkedService_properties_typeProperties_server": {
+			"value": "azure-mentoring-og.database.windows.net"
+		},
+		"AzureSqlDatabaseLinkedService_properties_typeProperties_database": {
+			"value": "DataMart"
+		},
+		"AzureSqlDatabaseLinkedService_properties_typeProperties_userName": {
+			"value": "oleg"
+		},
+		"AzureSqlDatabase_DataMart_properties_typeProperties_server": {
+			"value": "azure-mentoring-og.database.windows.net"
+		},
+		"AzureSqlDatabase_DataMart_properties_typeProperties_database": {
+			"value": "DataMart"
+		},
+		"AzureSqlDatabase_DataMart_properties_typeProperties_userName": {
+			"value": "oleg"
+		},
+		"DataLakeRawMoviesArchiveDestinationService_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"DataLakeRawMoviesSourceStorage_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"InputMovies_sasUri": {
+			"value": ""
+		},
+		"InputMovies_properties_typeProperties_sasToken_secretName": {
+			"value": "SAS-token"
+		},
+		"LocalSQLserver_properties_typeProperties_server": {
+			"value": "EPPLKRAW01F3\\MSSQLSERVER2025"
+		},
+		"LocalSQLserver_properties_typeProperties_database": {
+			"value": "CinemaTickets"
+		},
+		"LocalSQLserver_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LogCopyMovies_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"OutputMovies_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net"
+		},
+		"SinkSqlDatabase1_properties_typeProperties_server": {
+			"value": "azure-mentoring-og.database.windows.net"
+		},
+		"SinkSqlDatabase1_properties_typeProperties_database": {
+			"value": "movies"
+		},
+		"SinkSqlDatabase1_properties_typeProperties_userName": {
+			"value": "oleg"
+		},
+		"WriteJSON2DataLake_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		},
+		"WriteLakeJSON_properties_typeProperties_url": {
+			"value": "https://azurementoringdatalakeog.dfs.core.windows.net/"
+		}
+	}
+}
