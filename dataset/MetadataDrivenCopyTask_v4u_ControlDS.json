@@ -1,0 +1,20 @@
+{
+	"name": "MetadataDrivenCopyTask_v4u_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SinkSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_v4u_20260326"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "MainControlTable_v4u"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,19 @@
+{
+	"name": "InputMovies",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"sasUri": "https://azurementoringstorageog.blob.core.windows.net/movies",
+			"sasToken": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVaultLinkedServiceOG",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SAS-token"
+			}
+		}
+	}
+}

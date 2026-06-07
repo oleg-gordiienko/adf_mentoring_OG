@@ -1,0 +1,33 @@
+{
+	"name": "FromPremToSQL",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "FromPremSQLToAzureSQL",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2026-02-26T10:00:00",
+				"endTime": "2026-02-28T10:52:00",
+				"timeZone": "Central European Standard Time",
+				"schedule": {
+					"minutes": [
+						30
+					],
+					"hours": [
+						12
+					]
+				}
+			}
+		}
+	}
+}

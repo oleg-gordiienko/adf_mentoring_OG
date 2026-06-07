@@ -1,0 +1,7 @@
+{
+	"name": "tAzureMentoringSelfHostedIntegrationRuntime",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "selfhosted IR description"
+	}
+}

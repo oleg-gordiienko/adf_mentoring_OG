@@ -1,0 +1,20 @@
+{
+	"name": "ReadBlobJSON",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ReadBlobJSON",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "*.*",
+				"container": "online"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
